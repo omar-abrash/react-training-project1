@@ -1,8 +1,10 @@
-import ExpenseItem from "./componants/ExpenseItem";
+// import ExpenseItem from "./componants/ExpenseItem";
+import "./componants/expenses.css";
+import AllExpenseItems from "./componants/AllExpenseItems";
 
 function App() {
   // if we want reCall the <ExpenseItem> with defferent Data we can use this array
-  const Extense = [
+  const expenses = [
     {
       id: "e1",
       title: "Home Insurance",
@@ -33,26 +35,9 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <ExpenseItem
-        title={Extense[0].title}
-        date={Extense[0].date}
-        amount={Extense[0].amount}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={Extense[1].title}
-        date={Extense[1].date}
-        amount={Extense[1].amount}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={Extense[2].title}
-        date={Extense[2].date}
-        amount={Extense[2].amount}
-      ></ExpenseItem>
-      <ExpenseItem
-        title={Extense[3].title}
-        date={Extense[3].date}
-        amount={Extense[3].amount}
-      ></ExpenseItem>
+      <div className="expenses">
+        <AllExpenseItems expenses={expenses}></AllExpenseItems>
+      </div>
     </div>
   );
 }
