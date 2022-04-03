@@ -1,6 +1,4 @@
-// import ExpenseItem from "./componants/ExpenseItem";
-import "./componants/expenses.css";
-import AllExpenseItems from "./componants/AllExpenseItems";
+import AllExpenseItems from "./componants/Expenses/AllExpenseItems";
 
 function App() {
   // if we want reCall the <ExpenseItem> with defferent Data we can use this array
@@ -35,9 +33,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started!</h2>
-      <div className="expenses">
-        <AllExpenseItems expenses={expenses}></AllExpenseItems>
-      </div>
+      <AllExpenseItems expenses={expenses}></AllExpenseItems>
     </div>
   );
 }
