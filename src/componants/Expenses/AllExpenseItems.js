@@ -1,8 +1,8 @@
 import ExpenseItem from "./ExpenseItem";
-import Card from "../Card/Card";
+import Card from "../UI/Card";
 import "./expenses.css";
 
-function AllExpenseItems(props) {
+const AllExpenseItems = (props) => {
   // console.log(props); // look in here (the data come here as an object consist of array expenses)
   // console.log(props.expenses); // but in here we acess in the array expenses
   return (
@@ -29,5 +29,5 @@ function AllExpenseItems(props) {
       />
     </Card>
   );
-}
+};
 export default AllExpenseItems;

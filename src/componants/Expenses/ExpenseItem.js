@@ -1,9 +1,10 @@
 import ExpenseDate from "./ExpenseDate";
-import Card from "../Card/Card";
+import Card from "../UI/Card";
 import "./ExpenseItem.css";
 
-function ExpenseItem(props) {
+const ExpenseItem = (props) => {
   // we use props Parameter to acess the data from App.js
+
   return (
     <Card className="expense-item">
       <ExpenseDate date={props.date}></ExpenseDate>
@@ -13,6 +14,6 @@ function ExpenseItem(props) {
       </div>
     </Card>
   );
-}
+};
 
 export default ExpenseItem;

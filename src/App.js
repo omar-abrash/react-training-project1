@@ -1,6 +1,8 @@
 import AllExpenseItems from "./componants/Expenses/AllExpenseItems";
+import React from "react";
+import NewExpense from "./componants/NewExpense/NewExpense";
 
-function App() {
+const App = () => {
   // if we want reCall the <ExpenseItem> with defferent Data we can use this array
   const expenses = [
     {
@@ -32,10 +34,10 @@ function App() {
   // look to ExpenseItem.js to see how acess the Extense array data to desired locations.
   return (
     <div>
-      <h2>Let's get started!</h2>
+      <NewExpense />
       <AllExpenseItems expenses={expenses}></AllExpenseItems>
     </div>
   );
-}
+};
 
 export default App;
