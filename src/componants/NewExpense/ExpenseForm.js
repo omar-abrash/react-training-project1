@@ -1,7 +1,7 @@
 import react, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   // use (useState("")) to declear the inital values of three inputs values
   const [inputTitle, newTitle] = useState("");
   const [inputDate, newDate] = useState("");
@@ -26,7 +26,8 @@ const ExpenseForm = () => {
       date: new Date(inputDate),
       amount: inputAmount,
     };
-    console.log(newExpenseData);
+    // console.log(newExpenseData);
+    props.afterCollectData(newExpenseData); // send the newExpenseData to Parent Element (newExpense)
     // clear the data from inputs feilds:
     newTitle("");
     newDate("");

@@ -30,11 +30,18 @@ const App = () => {
       amount: 2500,
     },
   ];
+  const getCollectData = (expenseData) => {
+    const newExpenseData = {
+      ...expenseData,
+    };
+    console.log("In APP!!");
+    console.log(newExpenseData);
+  };
   // we must use attribute values to acces these data in this way :
   // look to ExpenseItem.js to see how acess the Extense array data to desired locations.
   return (
     <div>
-      <NewExpense />
+      <NewExpense sendExpenseData={getCollectData} />
       <AllExpenseItems expenses={expenses}></AllExpenseItems>
     </div>
   );
