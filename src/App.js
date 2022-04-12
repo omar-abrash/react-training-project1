@@ -8,13 +8,13 @@ const App = () => {
     {
       id: "e1",
       title: "Home Insurance",
-      date: new Date("2022-03-30"),
+      date: new Date("2021-03-30"),
       amount: 500,
     },
     {
       id: "e2",
       title: "Car Insurance",
-      date: new Date("2022-03-29"),
+      date: new Date("2020-03-29"),
       amount: 100,
     },
     {
@@ -26,7 +26,7 @@ const App = () => {
     {
       id: "e4",
       title: "Helth Insurance",
-      date: new Date("2022-03-25"),
+      date: new Date("2019-03-25"),
       amount: 2500,
     },
   ];
