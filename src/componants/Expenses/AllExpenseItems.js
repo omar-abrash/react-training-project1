@@ -1,8 +1,8 @@
 import ExpenseItem from "./ExpenseItem";
-import ExpenseFilter from "./ExpenseFilter";
+import ExpensesFilter from "./ExpensesFilter";
 import Card from "../UI/Card";
 import "./expenses.css";
-import react, { useState } from "react";
+import React, { useState } from "react";
 
 const AllExpenseItems = (props) => {
   // console.log(props); // look in here (the data come here as an object consist of array expenses)
@@ -10,18 +10,16 @@ const AllExpenseItems = (props) => {
 
   // for ExpenseFilter component we need the year and then make filter for data:
   // this mean we have change year ::> useState() hook for each change:
+  const [selectedYear, setNewYear] = useState("2022"); // initial value
 
-  const [selectedYear, setSelectedYear] = useState("2022"); // initial gess 2022
-  const getNewSelectedYear = (newYear) => {
-    setSelectedYear(newYear);
-    // console.log(selectedYear);
+  const getNewYear = (newYear) => {
+    setNewYear(newYear);
+    console.log(selectedYear);
   };
+
   return (
     <Card className="expenses">
-      <ExpenseFilter
-        selected={selectedYear}
-        onChangeYear={getNewSelectedYear}
-      />
+      <ExpensesFilter year={selectedYear} afterChangeYear={getNewYear} />
       <ExpenseItem
         title={props.expenses[0].title}
         date={props.expenses[0].date}
