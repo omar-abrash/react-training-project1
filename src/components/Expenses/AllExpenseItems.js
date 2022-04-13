@@ -5,32 +5,38 @@ import "./expenses.css";
 import React, { useState } from "react";
 
 const AllExpenseItems = (props) => {
-  // console.log(props); // look in here (the data come here as an object consist of array expenses)
-  // console.log(props.expenses); // but in here we acess in the array expenses
-
-  // for ExpenseFilter component we need the year and then make filter for data:
-  // this mean we have change year ::> useState() hook for each change:
   const [selectedYear, setNewYear] = useState("2022"); // initial value
-
   const getNewYear = (newYear) => {
     setNewYear(newYear);
-    console.log(selectedYear);
   };
+  // in here we need make filter for the (props.expense) depends on the selectedYear
+  const filterdExpenses = props.expenses.filter((expense) => {
+    return expense.date.getFullYear().toString() === selectedYear;
+  });
+  // console.log(filterdExpenses);
 
-  return (
-    <Card className="expenses">
-      <ExpensesFilter year={selectedYear} afterChangeYear={getNewYear} />
-
-      {props.expenses.map((expense) => {
+  let expensesNotFound = <p>No Expense Item in this year.</p>;
+  if (filterdExpenses.length > 0) {
+    expensesNotFound =
+      filterdExpenses.length > 0 &&
+      filterdExpenses.map((expense) => {
         return (
           <ExpenseItem
+            key={expense.id}
             title={expense.title}
             date={expense.date}
             amount={expense.amount}
           />
         );
-      })}
-    </Card>
+      });
+  }
+  return (
+    <div>
+      <Card className="expenses">
+        <ExpensesFilter year={selectedYear} afterChangeYear={getNewYear} />
+        {expensesNotFound}
+      </Card>
+    </div>
   );
 };
 export default AllExpenseItems;

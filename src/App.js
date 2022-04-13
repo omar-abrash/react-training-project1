@@ -12,7 +12,7 @@ const dummy_expenses = [
   {
     id: "e2",
     title: "Car Insurance",
-    date: new Date("2020-03-29"),
+    date: new Date("2021-03-29"),
     amount: 100,
   },
   {
@@ -28,18 +28,17 @@ const dummy_expenses = [
     amount: 2500,
   },
 ];
+
 const App = () => {
   // if we want reCall the <ExpenseItem> with defferent Data we can use this array
-  const [expenses, addNewExpense] = useState(dummy_expenses);
-
+  const [expenses, setNewExpense] = useState(dummy_expenses);
   const getCollectData = (expenseData) => {
     // console.log(expenseData);
-    addNewExpense((prevExpenses) => {
-      return [expenseData, ...prevExpenses];
+    setNewExpense((prevData) => {
+      return [expenseData, ...prevData];
     });
   };
-  // we must use attribute values to acces these data in this way :
-  // look to ExpenseItem.js to see how acess the Extense array data to desired locations.
+
   return (
     <div>
       <NewExpense sendExpenseData={getCollectData} />
