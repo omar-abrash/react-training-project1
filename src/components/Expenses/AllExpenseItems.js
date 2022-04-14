@@ -1,4 +1,4 @@
-import ExpenseItem from "./ExpenseItem";
+import ExpenseResult from "./ExpenseResult";
 import ExpensesFilter from "./ExpensesFilter";
 import Card from "../UI/Card";
 import "./expenses.css";
@@ -15,26 +15,11 @@ const AllExpenseItems = (props) => {
   });
   // console.log(filterdExpenses);
 
-  let expensesNotFound = <p>No Expense Item in this year.</p>;
-  if (filterdExpenses.length > 0) {
-    expensesNotFound =
-      filterdExpenses.length > 0 &&
-      filterdExpenses.map((expense) => {
-        return (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            date={expense.date}
-            amount={expense.amount}
-          />
-        );
-      });
-  }
   return (
     <div>
       <Card className="expenses">
         <ExpensesFilter year={selectedYear} afterChangeYear={getNewYear} />
-        {expensesNotFound}
+        <ExpenseResult expensesArray={filterdExpenses} />
       </Card>
     </div>
   );
