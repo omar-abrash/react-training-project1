@@ -32,28 +32,37 @@ const ExpenseForm = (props) => {
     newTitle("");
     newDate("");
     newAmount("");
+
+    props.changeClickEvent(true);
   };
 
   return (
-    <form onSubmit={getInputsData}>
-      <div className="new-expense__controls">
-        <div className="new-expense__control">
-          <label>title</label>
-          <input type="text" value={inputTitle} onChange={getNewTitle} />
+    <div>
+      <form onSubmit={getInputsData}>
+        <div className="new-expense__controls">
+          <div className="new-expense__control">
+            <label>title</label>
+            <input type="text" value={inputTitle} onChange={getNewTitle} />
+          </div>
+          <div className="new-expense__control">
+            <label>date</label>
+            <input type="date" value={inputDate} onChange={getNewDate} />
+          </div>
+          <div className="new-expense__control">
+            <label>amount</label>
+            <input type="number" value={inputAmount} onChange={getNewAmount} />
+          </div>
+          <div className="new-expense__actions">
+            <button type="button" onClick={props.changeClickEvent}>
+              Cancle
+            </button>
+          </div>
+          <div className="new-expense__actions">
+            <button type="submit">submit</button>
+          </div>
         </div>
-        <div className="new-expense__control">
-          <label>date</label>
-          <input type="date" value={inputDate} onChange={getNewDate} />
-        </div>
-        <div className="new-expense__control">
-          <label>amount</label>
-          <input type="number" value={inputAmount} onChange={getNewAmount} />
-        </div>
-        <div className="new-expense__actions">
-          <button type="submit">submit</button>
-        </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 };
 
