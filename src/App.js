@@ -6,26 +6,26 @@ const dummy_expenses = [
   {
     id: "e1",
     title: "Home Insurance",
-    date: new Date("2021-03-30"),
-    amount: 500,
+    date: new Date("2021-05-30"),
+    amount: 20.5,
   },
   {
     id: "e2",
     title: "Car Insurance",
-    date: new Date("2021-03-29"),
-    amount: 100,
+    date: new Date("2021-07-29"),
+    amount: 80,
   },
   {
     id: "e3",
     title: "Resturent Insurance",
-    date: new Date("2022-03-27"),
-    amount: 1000,
+    date: new Date("2022-12-27"),
+    amount: 50,
   },
   {
     id: "e4",
     title: "Helth Insurance",
-    date: new Date("2019-03-25"),
-    amount: 2500,
+    date: new Date("2019-6-25"),
+    amount: 100,
   },
 ];
 
